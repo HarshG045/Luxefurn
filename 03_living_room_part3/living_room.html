@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Room - Luxefurn</title>
+    <link rel="stylesheet" href="living room/livingroom.css">
+    <link rel="stylesheet" href="sofa/sofa.css">
+    <link rel="stylesheet" href="lamps/lamps.css">
+    <link rel="stylesheet" href="cushions/cushions.css">
+    <link rel="stylesheet" href="carpets/carpets.css">
+    <link rel="stylesheet" href="performance.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Active navigation state styling */
+        .nav-link.active {
+            color: #c29366 !important;
+            position: relative;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #c29366;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #c29366;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <div class="nav-logo">
+                Luxefurn
+            </div>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
+                <li><a href="../home.html" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link active">Living Room</a></li>
+                <li><a href="../16_dining_hall_part1/index.html" class="nav-link">Dining Hall</a></li>
+                <li><a href="../11_office_part1/index.html" class="nav-link">Office</a></li>
+                <li><a href="../05_bed_room_part1/index.html" class="nav-link">Bedroom</a></li>
+            </ul>
+            
+            <!-- Cart Button -->
+            <div class="nav-cart">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                Cart
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Living Room Designs Section -->
+    <section class="living-room-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Living Room Design Gallery</h1>
+                <p class="section-subtitle">Discover stunning living room inspirations crafted for modern homes</p>
+            </div>
+            
+            <!-- Single Image Sliding Gallery -->
+            <div class="gallery-container">
+                <div class="gallery-slider">
+                    <div class="gallery-track" id="galleryTrack">
+                        <div class="gallery-slide">
+                            <img src="living room/assets/spacejoy-c0JoR_-2x3E-unsplash.jpg" alt="Modern Minimalist Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Modern Minimalist</h3>
+                                <p>Clean & Fresh Design</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-slide">
+                            <img src="living room/assets/spacejoy-IH7wPsjwomc-unsplash.jpg" alt="Cozy Contemporary Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Cozy Contemporary</h3>
+                                <p>Warm & Inviting</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-slide">
+                            <img src="living room/assets/spacejoy-umAXneH4GhA-unsplash.jpg" alt="Luxury Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Luxury Design</h3>
+                                <p>Sophisticated elegance with premium materials</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-slide">
+                            <img src="living room/assets/collov-home-design-H-1j_s0dhCw-unsplash.jpg" alt="Scandinavian Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Scandinavian Style</h3>
+                                <p>Natural materials and bright, airy spaces</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-slide">
+                            <img src="living room/assets/collov-home-design-NTaF5rBmlyE-unsplash.jpg" alt="Industrial Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Industrial Chic</h3>
+                                <p>Raw materials with bold character</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-slide">
+                            <img src="living room/assets/dan-gold-4HG3Ca3EzWw-unsplash.jpg" alt="Bohemian Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Bohemian Style</h3>
+                                <p>Eclectic and artistic flair</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-slide">
+                            <img src="living room/assets/kara-eads-L7EwHkq1B2s-unsplash.jpg" alt="Mid-Century Modern Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Mid-Century Modern</h3>
+                                <p>Retro charm with timeless appeal</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-slide">
+                            <img src="living room/assets/minh-pham-OtXADkUh3-I-unsplash.jpg" alt="Contemporary Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Contemporary Style</h3>
+                                <p>Current trends with fresh look</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-slide">
+                            <img src="living room/assets/roberto-nickson-rEJxpBskj3Q-unsplash.jpg" alt="Rustic Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Rustic Charm</h3>
+                                <p>Natural wood with cozy atmosphere</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-slide">
+                            <img src="living room/assets/spacejoy-YqFz7UMm8qE-unsplash.jpg" alt="Elegant Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Elegant Design</h3>
+                                <p>Refined and sophisticated style</p>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-slide">
+                            <img src="living room/assets/thanos-pal-WUC_u5yoD2w-unsplash.jpg" alt="Modern Classic Living Room" loading="lazy">
+                            <div class="gallery-overlay">
+                                <h3>Modern Classic</h3>
+                                <p>Timeless with contemporary twist</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Controls -->
+                    <div class="gallery-controls">
+                        <button class="gallery-arrow gallery-prev" id="galleryPrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="gallery-arrow gallery-next" id="galleryNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Slide Indicators -->
+                    <div class="gallery-indicators">
+                        <span class="gallery-dot active" data-slide="0"></span>
+                        <span class="gallery-dot" data-slide="1"></span>
+                        <span class="gallery-dot" data-slide="2"></span>
+                        <span class="gallery-dot" data-slide="3"></span>
+                        <span class="gallery-dot" data-slide="4"></span>
+                        <span class="gallery-dot" data-slide="5"></span>
+                        <span class="gallery-dot" data-slide="6"></span>
+                        <span class="gallery-dot" data-slide="7"></span>
+                        <span class="gallery-dot" data-slide="8"></span>
+                        <span class="gallery-dot" data-slide="9"></span>
+                        <span class="gallery-dot" data-slide="10"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Design Features -->
+            <div class="design-features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Custom Designs</h3>
+                    <p>Tailored to your unique style and preferences</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>3D Visualization</h3>
+                    <p>See your space before making any changes</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Quality Materials</h3>
+                    <p>Premium furniture that lasts for years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sofa Collection Section -->
+    <section class="sofa-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Premium Sofa Collection</h1>
+                <p class="section-subtitle">Comfortable and stylish sofas to transform your living space</p>
+            </div>
+            
+            <!-- Sofa Grid Gallery -->
+            <div class="sofa-gallery-container">
+                <div class="sofa-grid-static">
+                    <div class="sofa-item fade-in">
+                        <img src="sofa/assets/inside-weather-dbH_vy7vICE-unsplash.jpg" alt="Modern Sectional Sofa" loading="lazy">
+                        <div class="sofa-overlay">
+                            <div class="sofa-info">
+                                <h3>Modern Sectional</h3>
+                                <p class="sofa-price">₹2,499</p>
+                                <p class="sofa-description">Spacious L-shaped sectional in premium fabric</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="sofa-item fade-in">
+                        <img src="sofa/assets/kam-idris-U39FPHKfDu0-unsplash.jpg" alt="Minimalist Sofa" loading="lazy">
+                        <div class="sofa-overlay">
+                            <div class="sofa-info">
+                                <h3>Minimalist Sofa</h3>
+                                <p class="sofa-price">₹1,899</p>
+                                <p class="sofa-description">Clean lines with comfort</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="sofa-item fade-in">
+                        <img src="sofa/assets/naomi-hebert-2dcYhvbHV-M-unsplash.jpg" alt="Vintage Sofa" loading="lazy">
+                        <div class="sofa-overlay">
+                            <div class="sofa-info">
+                                <h3>Vintage Style</h3>
+                                <p class="sofa-price">₹2,199</p>
+                                <p class="sofa-description">Classic design meets modern comfort</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="sofa-item fade-in">
+                        <img src="sofa/assets/nathan-fertig-FBXuXp57eM0-unsplash.jpg" alt="Contemporary Sofa" loading="lazy">
+                        <div class="sofa-overlay">
+                            <div class="sofa-info">
+                                <h3>Contemporary</h3>
+                                <p class="sofa-price">₹1,699</p>
+                                <p class="sofa-description">Modern comfort for any space</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="sofa-item fade-in">
+                        <img src="sofa/assets/paul-weaver-nWidMEQsnAQ-unsplash.jpg" alt="Luxury Sofa" loading="lazy">
+                        <div class="sofa-overlay">
+                            <div class="sofa-info">
+                                <h3>Luxury Collection</h3>
+                                <p class="sofa-price">₹3,299</p>
+                                <p class="sofa-description">Premium leather with exceptional craftsmanship</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="sofa-item fade-in">
+                        <img src="sofa/assets/phillip-goldsberry-fZuleEfeA1Q-unsplash.jpg" alt="Comfort Sofa" loading="lazy">
+                        <div class="sofa-overlay">
+                            <div class="sofa-info">
+                                <h3>Ultra Comfort</h3>
+                                <p class="sofa-price">₹2,099</p>
+                                <p class="sofa-description">Maximum relaxation design</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lamps Collection Section -->
+    <section class="lamps-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Designer Lamps Collection</h1>
+                <p class="section-subtitle">Illuminate your space with our curated collection of modern lighting</p>
+            </div>
+            
+            <!-- Lamps Grid Gallery -->
+            <div class="lamps-gallery-container">
+                <div class="lamps-grid-static">
+                    <div class="lamp-item fade-in">
+                        <img src="lamps/assets/emilio-garcia-_bzFLkJyY6o-unsplash.jpg" alt="Modern Table Lamp">
+                        <div class="lamp-overlay">
+                            <div class="lamp-info">
+                                <h3>Modern Table Lamp</h3>
+                                <p class="lamp-price">₹899</p>
+                                <p class="lamp-description">Sleek design with warm LED lighting</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="lamp-item fade-in">
+                        <img src="lamps/assets/etienne-girardet-NGb91VwnOWY-unsplash.jpg" alt="Pendant Light">
+                        <div class="lamp-overlay">
+                            <div class="lamp-info">
+                                <h3>Pendant Light</h3>
+                                <p class="lamp-price">₹1,299</p>
+                                <p class="lamp-description">Elegant hanging light for dining areas</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="lamp-item fade-in">
+                        <img src="lamps/assets/i-m__prakhar-kont-AgU9-qsNc1Y-unsplash.jpg" alt="Floor Lamp">
+                        <div class="lamp-overlay">
+                            <div class="lamp-info">
+                                <h3>Designer Floor Lamp</h3>
+                                <p class="lamp-price">₹1,599</p>
+                                <p class="lamp-description">Contemporary standing light with adjustable height</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="lamp-item fade-in">
+                        <img src="lamps/assets/jean-philippe-delberghe-Ry9WBo3qmoc-unsplash.jpg" alt="Desk Lamp">
+                        <div class="lamp-overlay">
+                            <div class="lamp-info">
+                                <h3>Adjustable Desk Lamp</h3>
+                                <p class="lamp-price">₹699</p>
+                                <p class="lamp-description">Perfect for work and study spaces</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="lamp-item fade-in">
+                        <img src="lamps/assets/julia-toX2sYnycCw-unsplash.jpg" alt="Ambient Light">
+                        <div class="lamp-overlay">
+                            <div class="lamp-info">
+                                <h3>Ambient Light</h3>
+                                <p class="lamp-price">₹999</p>
+                                <p class="lamp-description">Creates perfect mood lighting</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="lamp-item fade-in">
+                        <img src="lamps/assets/ochir-erdene-oyunmedeg-nPyUKODwjD8-unsplash.jpg" alt="Wall Sconce" loading="lazy">
+                        <div class="lamp-overlay">
+                            <div class="lamp-info">
+                                <h3>Modern Wall Sconce</h3>
+                                <p class="lamp-price">₹799</p>
+                                <p class="lamp-description">Space-saving wall mounted lighting</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="lamp-item fade-in">
+                        <img src="lamps/assets/tomas-jasovsky-d5SZqLkpIrY-unsplash.jpg" alt="Ceiling Light" loading="lazy">
+                        <div class="lamp-overlay">
+                            <div class="lamp-info">
+                                <h3>Ceiling Light</h3>
+                                <p class="lamp-price">₹1,799</p>
+                                <p class="lamp-description">Modern overhead lighting solution</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cushions & Carpets Collection Section -->
+    <section class="cushions-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Comfort Cushions & Carpets Collection</h1>
+                <p class="section-subtitle">Complete your living space with our premium cushions and elegant carpets</p>
+            </div>
+            
+            <!-- Combined Grid Gallery -->
+            <div class="cushions-gallery-container">
+                <!-- Cushions Subsection -->
+                <div class="subsection-header">
+                    <h2 class="subsection-title">Premium Cushions</h2>
+                    <p class="subsection-subtitle">Add style and comfort to your seating</p>
+                </div>
+                
+                <div class="cushions-grid-static">
+                    <div class="cushion-item fade-in">
+                        <img src="cushions/assets/designecologist-40NvXW1VPyQ-unsplash.jpg" alt="Designer Throw Pillows" loading="lazy">
+                        <div class="cushion-overlay">
+                            <div class="cushion-info">
+                                <h3>Designer Throw Pillows</h3>
+                                <p class="cushion-price">₹399</p>
+                                <p class="cushion-description">Premium fabric with geometric patterns</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="cushion-item fade-in">
+                        <img src="cushions/assets/ifrah-akhter-bDXpJtd4IOE-unsplash.jpg" alt="Textured Cushions" loading="lazy">
+                        <div class="cushion-overlay">
+                            <div class="cushion-info">
+                                <h3>Textured Cushions</h3>
+                                <p class="cushion-price">₹349</p>
+                                <p class="cushion-description">Soft textured fabric for extra comfort</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="cushion-item fade-in">
+                        <img src="cushions/assets/mediamodifier-zTY9OwAfOrg-unsplash.jpg" alt="Modern Accent Pillows" loading="lazy">
+                        <div class="cushion-overlay">
+                            <div class="cushion-info">
+                                <h3>Modern Accent Pillows</h3>
+                                <p class="cushion-price">₹449</p>
+                                <p class="cushion-description">Contemporary design with bold colors</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="cushion-item fade-in">
+                        <img src="cushions/assets/nik-bUqtlRXVcS0-unsplash.jpg" alt="Luxury Velvet Cushions" loading="lazy">
+                        <div class="cushion-overlay">
+                            <div class="cushion-info">
+                                <h3>Luxury Velvet Cushions</h3>
+                                <p class="cushion-price">₹599</p>
+                                <p class="cushion-description">Premium velvet with elegant finish</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="cushion-item fade-in">
+                        <img src="cushions/assets/sven-brandsma-GWFFvub7Y1U-unsplash.jpg" alt="Scandinavian Style Pillows" loading="lazy">
+                        <div class="cushion-overlay">
+                            <div class="cushion-info">
+                                <h3>Scandinavian Style</h3>
+                                <p class="cushion-price">₹299</p>
+                                <p class="cushion-description">Minimalist design with natural tones</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carpets Subsection -->
+                <div class="subsection-header">
+                    <h2 class="subsection-title">Elegant Carpets</h2>
+                    <p class="subsection-subtitle">Transform your floors with luxury carpets</p>
+                </div>
+                
+                <div class="carpets-grid-static">
+                    <div class="carpet-item fade-in">
+                        <img src="carpets/assets/ali-choubin-qsfgZ3P2C2E-unsplash.jpg" alt="Persian Style Carpet" loading="lazy">
+                        <div class="carpet-overlay">
+                            <div class="carpet-info">
+                                <h3>Persian Style Carpet</h3>
+                                <p class="carpet-price">₹2,999</p>
+                                <p class="carpet-description">Traditional patterns with modern quality</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="carpet-item fade-in">
+                        <img src="carpets/assets/erfan-banaei-p00r5JmTMpY-unsplash.jpg" alt="Modern Geometric Rug" loading="lazy">
+                        <div class="carpet-overlay">
+                            <div class="carpet-info">
+                                <h3>Modern Geometric Rug</h3>
+                                <p class="carpet-price">₹1,899</p>
+                                <p class="carpet-description">Contemporary patterns for modern homes</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="carpet-item fade-in">
+                        <img src="carpets/assets/good-days-digital-Vra_DPrrBlE-unsplash.jpg" alt="Minimalist Area Rug" loading="lazy">
+                        <div class="carpet-overlay">
+                            <div class="carpet-info">
+                                <h3>Minimalist Area Rug</h3>
+                                <p class="carpet-price">₹1,599</p>
+                                <p class="carpet-description">Clean lines with neutral tones</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="carpet-item fade-in">
+                        <img src="carpets/assets/sina-saadatmand-gB9hryu1q40-unsplash.jpg" alt="Luxury Shag Carpet" >
+                        <div class="carpet-overlay">
+                            <div class="carpet-info">
+                                <h3>Luxury Shag Carpet</h3>
+                                <p class="carpet-price">₹3,499</p>
+                                <p class="carpet-description">Ultra-soft texture for ultimate comfort</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="carpet-item fade-in">
+                        <img src="carpets/assets/zeki-okur-QOrX97xFnWY-unsplash.jpg" alt="Vintage Style Rug" >
+                        <div class="carpet-overlay">
+                            <div class="carpet-info">
+                                <h3>Vintage Style Rug</h3>
+                                <p class="carpet-price">₹2,299</p>
+                                <p class="carpet-description">Timeless elegance with vintage charm</p>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="performance.js"></script>
+    <script src="living room/livingroom_simple.js"></script>
+    <script src="sofa/sofa.js"></script>
+    <script src="lamps/lamps.js"></script>
+    <script src="cushions/cushions.js"></script>
+    <script src="carpets/carpets.js"></script>
+</body>
+</html>
+
+
