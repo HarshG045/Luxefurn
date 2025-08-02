@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeFurn - Premium Office Furniture</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>LuxeFurn</h2>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../living room-/living_room.html" class="nav-link">Living Room</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../dining hall-/index.html" class="nav-link">Dining Hall</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Office</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../bed room-/index.html" class="nav-link">Bedroom</a>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-cart-btn" id="cart-btn">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-text">Cart</span>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+            
+            <style>
+                /* Active navigation state styling */
+                .nav-link.active {
+                    color: #c29366 !important;
+                    position: relative;
+                }
+                
+                .nav-link.active::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: #c29366;
+                    animation: slideIn 0.3s ease-out;
+                }
+                
+                @keyframes slideIn {
+                    from {
+                        width: 0;
+                    }
+                    to {
+                        width: 100%;
+                    }
+                }
+                
+                .nav-link {
+                    transition: color 0.3s ease;
+                }
+                
+                .nav-link:hover {
+                    color: #c29366;
+                }
+            </style>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="hero-title">Transform Your Office with LuxeFurn</h1>
+            <p class="hero-subtitle">Discover our premium collection of office furniture designed to elevate productivity and style in your workspace.</p>
+            <button class="cta-button" onclick="scrollToSection('chairs')">Explore Our Collection</button>
+        </div>
+    </section>
+
+    <!-- Office Chairs Section -->
+    <section class="product-section" id="chairs">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">Premium Office Chairs</h2>
+            <p class="section-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Experience unparalleled comfort and elegance with our curated selection of executive office chairs.</p>
+            <div class="product-grid" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="chairs/effydesk-TIOGOV5ZQzA-unsplash.jpg" alt="Executive Leather Chair">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Executive Leather Chair</h3>
+                        <p class="product-description">Premium leather executive chair with ergonomic design</p>
+                        <p class="product-price">$1,299</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="chairs/forlll-de-rad-csACyIwv5KU-unsplash.jpg" alt="Modern Ergonomic Chair">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Modern Ergonomic Chair</h3>
+                        <p class="product-description">Contemporary design with superior lumbar support</p>
+                        <p class="product-price">$899</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="chairs/forlll-de-rad-UajIDzE_15I-unsplash.jpg" alt="Luxury Office Chair">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Designer Executive Chair</h3>
+                        <p class="product-description">Sophisticated style meets comfort and functionality</p>
+                        <p class="product-price">$1,599</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <button class="view-all-btn">View All Chairs Collection</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meeting Space Section -->
+    <section class="product-section" id="meeting-space">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">Meeting Room Solutions</h2>
+            <p class="section-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Create inspiring meeting spaces that foster collaboration and productivity.</p>
+            <div class="product-grid" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="meeting room/benjamin-child-0sT9YhNgSEs-unsplash.jpg" alt="Conference Table Set">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Executive Conference Table</h3>
+                        <p class="product-description">Elegant conference table perfect for board meetings</p>
+                        <p class="product-price">$3,299</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="meeting room/dane-deaner-_-KLkj7on_c-unsplash.jpg" alt="Executive Meeting Room">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Complete Meeting Room Set</h3>
+                        <p class="product-description">Full meeting room solution with premium furniture</p>
+                        <p class="product-price">$7,999</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <button class="view-all-btn">View All Meeting Solutions</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workspace Sets Section -->
+    <section class="product-section" id="workspace-sets">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">Complete Workspace Solutions</h2>
+            <p class="section-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Transform your office with our carefully curated workspace furniture collections.</p>
+            <div class="product-grid workspace-grid" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="office/workspace/gian-paolo-aliatis--AfflhhVVuA-unsplash.jpg" alt="Modern Workspace Set">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Modern Workspace Set</h3>
+                        <p class="product-description">Sleek and contemporary office setup</p>
+                        <p class="product-price">$2,299</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="office/workspace/jean-philippe-delberghe-Gdufctyvzjo-unsplash.jpg" alt="Executive Desk Suite">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Executive Desk Suite</h3>
+                        <p class="product-description">Premium executive office solution</p>
+                        <p class="product-price">$3,499</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="office/workspace/taylor-friehl-DrxEBj7cJTo-unsplash.jpg" alt="Minimalist Office Set">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Minimalist Office Set</h3>
+                        <p class="product-description">Clean lines for focused productivity</p>
+                        <p class="product-price">$1,899</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="office/workspace/taylor-friehl-GIbrQem17Zg-unsplash.jpg" alt="Premium Workspace">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Workspace</h3>
+                        <p class="product-description">Luxury office environment design</p>
+                        <p class="product-price">$4,299</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="office/workspace/toa-heftiba-FV3GConVSss-unsplash.jpg" alt="Contemporary Office">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Contemporary Office</h3>
+                        <p class="product-description">Modern design with timeless appeal</p>
+                        <p class="product-price">$2,799</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="office/workspace/uneebo-office-design-UgYT5nkXdK4-unsplash.jpg" alt="Designer Workspace">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Designer Workspace</h3>
+                        <p class="product-description">Architectural elegance meets functionality</p>
+                        <p class="product-price">$5,199</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="office/workspace/infralist-com-kmIKEGO7Vl4-unsplash.jpg" alt="Collaborative Hub">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Collaborative Hub</h3>
+                        <p class="product-description">Open workspace for team collaboration</p>
+                        <p class="product-price">$3,799</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <button class="view-all-btn">View All Workspace Collections</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>LuxeFurn</h3>
+                    <p>Transforming offices worldwide with premium furniture solutions since 2020</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#dining-hall">Dining Hall</a></li>
+                            <li><a href="#living-room">Living Room</a></li>
+                            <li><a href="#bedroom">Bedroom</a></li>
+                            <li><a href="#" onclick="showCartModal()">Shopping Cart</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Returns & Warranty</a></li>
+                            <li><a href="#">Design Consultation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LuxeFurn. All rights reserved. | Premium Office Furniture Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
