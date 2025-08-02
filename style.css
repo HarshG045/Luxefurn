@@ -1,0 +1,1832 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background: #ffffff; /* Clean white background for the entire page */
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Loader Styles */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+        url('./21_assets_part3/other_assets/spacejoy-9M66C_w_ToM-unsplash.jpg') center/cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 9999;
+    overflow: hidden;
+    padding-left: 5vw;
+    padding-top: 15vh;
+}
+
+.loader-content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.main-line {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUpFromLine 0.8s ease-out 0.2s forwards;
+    position: relative;
+    top: -10px;
+}
+
+.loading-counter {
+    font-family: 'Courier New', monospace;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 700;
+    font-style: italic;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: 1px;
+    gap: 6px;
+}
+
+#counter-display {
+    display: inline-block;
+    width: 45px;
+    text-align: right;
+}
+
+.dash {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.hundred {
+    display: inline-block;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    color: white;
+}
+
+.tagline-container {
+    width: 60vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.tagline-text {
+    font-family: 'Google Sans', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: white;
+    line-height: 1.4;
+    margin: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.line-2 {
+    display: block;
+    opacity: 0;
+    transform: translateY(60px);
+    animation: emergenceAnimation 1s ease-out 0.8s forwards;
+    overflow: hidden;
+    position: relative;
+}
+
+.welcome-text {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    font-family: 'Google Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+}
+
+#typing-text {
+    display: inline-block;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    color: white;
+    font-size: inherit;
+}
+
+.typing-active {
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+.dots {
+    opacity: 0;
+}
+
+.dots.show {
+    animation: fadeInDots 0.3s ease-in forwards;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+}
+
+@keyframes fadeInDots {
+    to { opacity: 1; }
+}
+
+@keyframes fontSwitch {
+    0%, 33% {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+    }
+    34%, 66% {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+    }
+    67%, 100% {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+    }
+}
+
+/* Loader Animations */
+@keyframes slideUpFromLine {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+        clip-path: inset(100% 0 0 0);
+    }
+    50% {
+        opacity: 1;
+        clip-path: inset(50% 0 0 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0% 0 0 0);
+    }
+}
+
+@keyframes fontSwitch {
+    0%, 33% {
+        font-family: 'Castellar', fantasy;
+        font-style: normal;
+    }
+    34%, 66% {
+        font-family: 'Google Sans', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+    }
+    67%, 100% {
+        font-family: 'Castellar', fantasy;
+        font-style: normal;
+    }
+}
+
+@keyframes emergenceAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+        clip-path: inset(100% 0 0 0);
+    }
+    30% {
+        opacity: 0.3;
+        clip-path: inset(70% 0 0 0);
+    }
+    60% {
+        opacity: 0.7;
+        clip-path: inset(40% 0 0 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0% 0 0 0);
+    }
+}
+
+@keyframes fadeOutAll {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes loaderFadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Loader Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+
+@keyframes loaderFadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(10, 10, 10, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #667eea;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.nav-icons i {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #fff;
+}
+
+.nav-icons i:hover {
+    color: #667eea;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding-top: 80px;
+}
+
+.hero-content {
+    flex: 1;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Highlights Section - Apple Style */
+.highlights {
+    padding: 6rem 0;
+    background: rgba(245, 245, 247, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.highlights h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.highlight-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.highlight-icon {
+    font-size: 3rem;
+    color: #0071e3;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-item h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+}
+
+.highlight-item p {
+    font-size: 1rem;
+    color: #86868b;
+    line-height: 1.6;
+}
+
+/* Featured Collections Section - Apple Style */
+.featured-collections {
+    padding: 6rem 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.featured-collections h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.collection-card {
+    background: #f5f5f7;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.collection-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.collection-image {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: #0071e3;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.collection-image i {
+    color: white;
+}
+
+.collection-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.collection-content h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 0.5rem;
+}
+
+.collection-content p {
+    font-size: 1rem;
+    color: #86868b;
+    margin-bottom: 1rem;
+}
+
+.collection-link {
+    color: #0071e3;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Signature Pieces Section - Apple Style */
+.signature-pieces {
+    padding: 6rem 0;
+    background: rgba(245, 245, 247, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.signature-pieces h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.signature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.signature-item {
+    text-align: center;
+    background: white;
+    border-radius: 18px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.signature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.signature-image {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    color: #0071e3;
+    margin-bottom: 1.5rem;
+    background: #f5f5f7;
+    border-radius: 12px;
+}
+
+.signature-info h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 0.5rem;
+}
+
+.signature-info p {
+    font-size: 1rem;
+    color: #86868b;
+    margin-bottom: 1rem;
+}
+
+.signature-info .price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0071e3;
+}
+
+/* Why LuxeFurn Section - Apple Style */
+.why-luxefurn {
+    padding: 6rem 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.why-luxefurn h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    color: #0071e3;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-item h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+}
+
+.benefit-item p {
+    font-size: 1rem;
+    color: #86868b;
+    line-height: 1.6;
+}
+
+/* Footer - Apple Style */
+.footer {
+    background: rgba(245, 245, 247, 0.95);
+    backdrop-filter: blur(10px);
+    color: #1d1d1f;
+    padding: 4rem 0 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #86868b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #0071e3;
+}
+
+.footer-section p {
+    color: #86868b;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #86868b;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Loader responsive styles */
+    .loader {
+        padding-left: 8vw;
+        padding-top: 20vh;
+    }
+    
+    .main-line {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .loading-counter {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        gap: 5px;
+    }
+    
+    #counter-display {
+        width: 40px;
+    }
+    
+    .dash {
+        margin: 0 4px;
+    }
+    
+    .main-line {
+        top: -5px;
+    }
+    
+    .brand-name {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
+    
+    .tagline-container {
+        width: 85vw;
+    }
+    
+    .tagline-text {
+        font-size: clamp(1.2rem, 6vw, 2.5rem);
+    }
+}
+
+/* Hide main content initially */
+.main-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: #ffffff; /* Clean white background for main content */
+    min-height: 100vh;
+    color: #1d1d1f;
+}
+
+.main-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navigation - Apple Style */
+.navbar {
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.nav-logo h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.6rem;
+    color: #1d1d1f;
+    font-weight: 600;
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #1d1d1f;
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-menu a:hover {
+    color: #0071e3;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    align-items: center;
+}
+
+.nav-icons i {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #1d1d1f;
+}
+
+.nav-icons i:hover {
+    color: #0071e3;
+}
+
+/* Apple-Style Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+        url('./21_assets_part3/other_assets/spacejoy-9M66C_w_ToM-unsplash.jpg') center/cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 120px 2rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero-content h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    opacity: 0.9;
+}
+
+.hero-content p {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 4rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    padding: 1.2rem 3rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-decoration: none;
+    display: inline-block;
+    min-width: 200px;
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 113, 227, 0.4);
+    border: 2px solid transparent;
+}
+
+.cta-button.primary:hover {
+    background: linear-gradient(135deg, #005bb5 0%, #004494 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 113, 227, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-button.primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 113, 227, 0.4);
+}
+
+.cta-button.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.2);
+}
+
+/* Entrance animations for Apple-style sections */
+.main-content .navbar {
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: slideDownFade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.05s forwards;
+}
+
+.main-content .hero {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUpFade 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s forwards;
+}
+
+.main-content .highlights {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUpFade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+}
+
+.main-content .featured-collections {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUpFade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+}
+
+.main-content .signature-pieces {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUpFade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards;
+}
+
+.main-content .why-luxefurn {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUpFade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+}
+
+.main-content .footer {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUpFade 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards;
+}
+
+/* Responsive Design - Apple Style */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero {
+        padding: 140px 1rem 0 1rem;
+    }
+    
+    .nav-container {
+        height: 45px;
+    }
+    
+    .nav-logo h2 {
+        font-size: 1.4rem;
+    }
+    
+    .nav-icons {
+        font-size: 1rem;
+        gap: 0.6rem;
+    }
+    
+    .hero-content h1 {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+    
+    .hero-content h2 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 200px;
+    }
+    
+    .highlights-grid,
+    .collection-grid,
+    .signature-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .highlights h2,
+    .featured-collections h2,
+    .signature-pieces h2,
+    .why-luxefurn h2 {
+        font-size: 2rem;
+    }
+    
+    .why-luxefurn h2 {
+        padding: 0 1rem;
+    }
+    
+    /* Loader responsive styles */
+    .loader {
+        padding-left: 8vw;
+        padding-top: 20vh;
+    }
+    
+    .main-line {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .loading-counter {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        gap: 5px;
+    }
+    
+    #counter-display {
+        width: 40px;
+    }
+    
+    .dash {
+        margin: 0 4px;
+    }
+    
+    .main-line {
+        top: -5px;
+    }
+    
+    .brand-name {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
+    
+    .tagline-container {
+        width: 85vw;
+    }
+    
+    .tagline-text {
+        font-size: clamp(1.2rem, 6vw, 2.5rem);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes slideDownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrolling Body States */
+body.scrolling {
+    scroll-behavior: smooth;
+}
+
+body.scrolling .category-section,
+body.scrolling .carousel-section {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Enhanced Gradient Animations */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(102, 126, 234, 0.2);
+    }
+}
+
+.category-section.scroll-animate::before,
+.carousel-section.scroll-animate::before {
+    animation: gradientShift 6s ease-in-out infinite, pulseGlow 4s ease-in-out infinite;
+}
+
+/* ===== CATEGORY SECTION STYLES - BLENDED WITH LUXEFURN ===== */
+.category-section {
+    padding: 80px 0 20px;
+    text-align: center;
+    position: relative;
+    background: #ffffff; /* Pure white background */
+    border: none;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+}
+
+.category-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(102, 126, 234, 0.02) 0%,
+        rgba(118, 75, 162, 0.01) 50%,
+        rgba(102, 126, 234, 0.02) 100%
+    );
+    animation: gradientShift 8s ease-in-out infinite;
+    z-index: 0;
+}
+
+.category-section.scroll-animate {
+    background: #ffffff; /* Keep pure white on scroll */
+    transform: translateY(0);
+}
+
+.category-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.category-container.scroll-animate {
+    transform: translateY(0) scale(1.02);
+    opacity: 1;
+}
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #000000; /* Black text */
+    margin-bottom: 60px;
+    /* text-shadow: 0 4px 20px rgba(102, 126, 234, 0.3); */
+    letter-spacing: -0.02em;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.category-title.scroll-animate {
+    transform: translateY(0) scale(1.05);
+    opacity: 1;
+    /* text-shadow: 0 6px 25px rgba(102, 126, 234, 0.4); */
+}
+
+.category-circles {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.category-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.category-circle:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
+.category-circle:nth-child(2) { animation-delay: 0.3s; opacity: 0; }
+.category-circle:nth-child(3) { animation-delay: 0.5s; opacity: 0; }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.circle-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(102, 126, 234, 0.3);
+    position: relative;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+    backdrop-filter: blur(20px);
+}
+
+.circle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+.circle-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.6) 0%, rgba(118, 75, 162, 0.3) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.category-name {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+/* Hover Effects - LuxeFurn Style */
+.category-circle:hover {
+    transform: translateY(-15px) scale(1.05);
+}
+
+.category-circle:hover .circle-image {
+    border-color: rgba(102, 126, 234, 0.8);
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+}
+
+.category-circle:hover .circle-image img {
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.2);
+}
+
+.category-circle:hover .circle-overlay {
+    opacity: 1;
+}
+
+/* Active/Click Effects */
+.category-circle.active {
+    transform: translateY(-10px) scale(1.1);
+}
+
+.category-circle.active .circle-image {
+    border-color: #667eea;
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+.category-circle.active .circle-overlay {
+    opacity: 0.3;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.1) 100%);
+    pointer-events: none;
+}
+
+.category-circle.active .category-name {
+    color: #667eea;
+    opacity: 1;
+}
+
+/* Click Animation */
+.category-circle:active {
+    transform: translateY(-5px) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .category-circles {
+        gap: 40px;
+    }
+    
+    .category-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .category-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    .category-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* ===== INFINITE MARQUEE ANIMATION ===== */
+@keyframes infiniteScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.carousel-section {
+    padding: 0px 0 0;
+    position: relative;
+    overflow: hidden;
+    background: #f8f9fa; /* Light gray background for carousel section */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin-bottom: 0; /* Remove any bottom margin */
+}
+
+.carousel-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(102, 126, 234, 0.01) 0%,
+        rgba(118, 75, 162, 0.008) 50%,
+        rgba(102, 126, 234, 0.015) 100%
+    );
+    animation: gradientShift 10s ease-in-out infinite reverse;
+    z-index: 0;
+}
+
+.carousel-section.scroll-animate {
+    background: #f8f9fa; /* Keep light gray background on scroll */
+    transform: translateY(0);
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    position: relative;
+    z-index: 1;
+    transform: translateY(20px);
+    opacity: 0.8;
+}
+
+.carousel-wrapper.scroll-animate {
+    transform: translateY(0) scale(1.01);
+    opacity: 1;
+}
+
+.carousel-wrapper.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.carousel-container {
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    mask: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.6s ease;
+    animation: infiniteScroll 25s linear infinite;
+    width: fit-content;
+    padding: 40px 0;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.85); /* Light background with opacity */
+    border: 1px solid rgba(102, 126, 234, 0.15); /* Light border */
+    backdrop-filter: blur(15px) saturate(1.2); /* Reduced blur for light theme */
+    width: 280px; /* Fixed width for consistent vertical cards */
+    height: 340px; /* Reduced height for minimal modern look */
+    max-width: 90vw;
+    border-radius: 25px; /* Larger border radius for modern look */
+    overflow: visible; /* Changed from hidden to visible */
+    transition: transform 0.6s ease, box-shadow 0.5s ease, background 0.3s ease, filter 0.3s ease;
+    transform: scale(0.9);
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08), inset 0 1px 0 rgba(102, 126, 234, 0.1); /* Light shadow */
+    cursor: pointer;
+    position: relative;
+    animation: fadeUp 0.8s ease forwards;
+    margin-top: 80px; /* Reduced margin for compact layout */
+    padding-top: 80px; /* Reduced padding for compact layout */
+    flex-shrink: 0; /* Prevent cards from shrinking in infinite scroll */
+}
+
+/* Enhanced scroll animation for cards */
+.carousel-wrapper.scroll-animate .card {
+    transform: scale(0.92) translateY(-5px);
+    filter: brightness(1.02) contrast(1.05);
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.12), inset 0 1px 0 rgba(102, 126, 234, 0.15);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modern floating animation for images */
+@keyframes float {
+    0%, 100% { 
+        transform: translateX(-50%) translateY(0px); 
+    }
+    50% { 
+        transform: translateX(-50%) translateY(-5px); 
+    }
+}
+
+.card img {
+    width: 200px; /* Slightly reduced width for compact layout */
+    height: 140px; /* Reduced height to fit compact cards */
+    border-radius: 20px; /* Larger rounded corners for modern look */
+    object-fit: cover; /* Ensure proper image cropping */
+    display: block;
+    border: 3px solid rgba(102, 126, 234, 0.4); /* LuxeFurn theme color border */
+    transition: transform 0.6s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    position: absolute; /* Position it absolutely */
+    top: -70px; /* Adjusted for compact layout */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Perfect center alignment */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(102, 126, 234, 0.2); /* Enhanced multi-layer shadow with LuxeFurn colors */
+    filter: brightness(0.95) contrast(1.1) saturate(1.1); /* Enhanced image quality */
+    animation: float 4s ease-in-out infinite; /* Subtle floating animation */
+}
+
+.card .info {
+    padding: 25px 20px 110px 20px; /* Reduced padding for compact layout */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Reduced gap for more compact spacing */
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.card .product-details {
+    flex-grow: 1;
+    margin-bottom: 10px; /* Reduced margin for compact layout */
+}
+
+.card .product-features {
+    display: flex;
+    justify-content: center;
+    gap: 12px; /* Slightly increased gap for better spacing */
+    position: absolute;
+    bottom: 75px; /* Adjusted for compact card height */
+    left: 20px;
+    right: 20px;
+    margin-bottom:12px;
+}
+
+.card .feature-tag {
+    background: rgba(102, 126, 234, 0.15); /* Light background for light theme */
+    color: #4a5568; /* Dark text for light background */
+    padding: 4px 8px; /* Very low padding as requested */
+    border-radius: 12px; /* Reduced border radius */
+    font-size: 0.8rem; /* Smaller text for minimal design */
+    font-weight: 500; /* Medium weight for light theme */
+    border: 1px solid rgba(102, 126, 234, 0.25); /* Light border */
+    flex: 1;
+    text-align: center;
+    max-width: calc(50% - 6px); /* Perfect 50/50 split with gap */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: none; /* Remove text shadow for light theme */
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+.card .feature-tag:hover {
+    background: rgba(102, 126, 234, 0.25); /* Light hover effect */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15); /* Light shadow */
+}
+
+.card .price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    border-top: 1px solid rgba(251, 251, 251, 0.1); /* Light border */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(246, 248, 250, 0.95); /* Light background for price section */
+    backdrop-filter: blur(10px);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.card .pricing {
+    display: flex;
+    align-items: center;
+}
+
+.card .price {
+    color: #2d3748; /* Dark text for light background */
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.card .add-to-cart {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    white-space: nowrap;
+}
+
+.card .add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.card h3 {
+    color: #2d3748; /* Dark text for light background */
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem; /* Slightly smaller for compact layout */
+    margin-bottom: 8px; /* Reduced margin for tighter spacing */
+}
+
+.card p {
+    font-size: 0.9rem; /* Slightly smaller text */
+    color: #4a5568; /* Medium gray for light background */
+    line-height: 1.3; /* Tighter line height for compact layout */
+    font-family: 'Inter', sans-serif;
+}
+
+.card.active {
+    transform: scale(1.15) translateY(-10px);
+    background: rgba(255, 255, 255, 0.95); /* Light active state */
+    box-shadow: 0 0 50px rgba(102, 126, 234, 0.2), 0 25px 50px rgba(102, 126, 234, 0.1); /* Light shadows */
+    border: 1px solid rgba(102, 126, 234, 0.25); /* Light border */
+}
+
+.card.active img {
+    border-color: rgba(102, 126, 234, 0.9); /* Enhanced LuxeFurn border for active card */
+    box-shadow: 0 18px 45px rgba(102, 126, 234, 0.4), 0 8px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+    filter: brightness(1.1) contrast(1.2) saturate(1.3); /* Enhanced active state */
+}
+
+.card:hover img {
+    transform: translateX(-50%) scale(1.1) rotateY(5deg); /* Added subtle 3D rotation for modern effect */
+    border-color: rgba(102, 126, 234, 0.8); /* Brighter border on hover */
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3), 0 10px 30px rgba(0, 0, 0, 0.5); /* Enhanced dramatic shadow */
+    filter: brightness(1.05) contrast(1.15) saturate(1.2); /* Enhanced image on hover */
+}
+
+.card:hover {
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.15), 0 20px 60px rgba(102, 126, 234, 0.15);
+    transform: scale(0.92) translateY(-5px); /* Slight lift effect */
+}
+
+.card:hover .info {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    border-radius: 25px 25px 0 0; /* Match card's top border radius, exclude bottom for pricing section */
+}
+
+.nav {
+    font-size: 3rem;
+    background: none;
+    border: none;
+    color: #4a5568; /* Dark color for light theme */
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s ease;
+    padding: 10px;
+}
+
+.nav:hover {
+    color: #667eea; /* LuxeFurn color on hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        width: 240px; /* Smaller width for mobile */
+        height: 300px; /* Reduced height for minimal mobile layout */
+        background: rgba(255, 255, 255, 0.85); /* Light background for mobile */
+    }
+    
+    .card img {
+        width: 170px; /* Reduced for compact mobile layout */
+        height: 120px; /* Reduced height for mobile */
+    }
+    
+    .card .info {
+        padding: 20px 15px 100px 15px; /* Reduced padding for compact mobile layout */
+        gap: 10px; /* Tighter spacing for mobile */
+    }
+    
+    .card .product-features {
+        gap: 8px; /* Reduced gap for mobile */
+        bottom: 65px; /* Adjusted for compact mobile card */
+        left: 15px;
+        right: 15px;
+    }
+    
+    .card .feature-tag {
+        font-size: 0.75rem; /* Smaller text for mobile */
+        padding: 3px 6px; /* Very low padding for mobile */
+        max-width: calc(50% - 4px); /* Perfect 50/50 split on mobile */
+        border-radius: 10px; /* Smaller border radius for mobile */
+        font-weight: 500; /* Medium weight for mobile */
+    }
+}
+
+/* ===== TEAM SECTION STYLES ===== */
+.team-section {
+    background: #ffffff;
+    padding: 80px 20px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.team-header {
+    margin-bottom: 60px;
+}
+
+.team-header h2 {
+    color: #2d3748;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.team-header p {
+    color: #4a5568;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    max-width: 300px;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.member-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    border: 4px solid #f0f0f0;
+}
+
+.member-card:hover img {
+    transform: scale(1.1);
+    border-color: #667eea;
+}
+
+.member-card h3 {
+    color: #2d3748;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .team-section {
+        padding: 60px 20px;
+    }
+    
+    .team-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .team-header p {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+    
+    .team-members {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .member-card {
+        max-width: 280px;
+        padding: 25px;
+    }
+    
+    .member-card img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .member-card h3 {
+        font-size: 1.3rem;
+    }
+}
