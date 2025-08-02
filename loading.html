@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeFurn - Loading</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loader Section -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="main-line">
+                <span class="loading-counter">
+                    <span id="counter-display">0</span><span class="dash">-</span><span class="hundred">100</span>
+                </span>
+                <span class="brand-name">LuxeFurn</span>
+            </div>
+            <div class="tagline-container">
+                <h1 class="tagline-text">
+                    <span class="line-2">Where Comfort Meets Great Design</span>
+                    <span class="welcome-text">
+                        <span id="typing-text"></span>
+                    </span>
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Enhanced Loading Animation Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* Remove custom background properties to let CSS file handle it */
+            z-index: 9999;
+        }
+
+        .loader::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+            animation: shimmer 4s infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .loader-content {
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading-counter {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .brand-name {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px rgba(194, 147, 102, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(194, 147, 102, 0.8), 0 0 30px rgba(194, 147, 102, 0.6); }
+        }
+
+        .line-2 {
+            animation: slideInLeft 1.2s ease-out 0.5s both;
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .welcome-text {
+            position: relative;
+        }
+
+        .welcome-text::after {
+            content: '|';
+            animation: blink 1s infinite;
+            margin-left: 2px;
+            color: #c29366;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Hide cursor when typing is complete */
+        .welcome-text.typing-complete::after {
+            display: none;
+        }
+
+        /* Progress bar animation */
+        .progress-bar {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 1px;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #c29366, #d4a574, #c29366);
+            background-size: 200% 100%;
+            animation: progressGlow 2s ease-in-out infinite;
+            width: 0%;
+            transition: width 0.1s ease-out;
+        }
+
+        @keyframes progressGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Floating particles animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(194, 147, 102, 0.6);
+            border-radius: 50%;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Completion animation */
+        .completion-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border: 2px solid #c29366;
+            border-radius: 50%;
+            opacity: 0;
+            animation: expandFade 1s ease-out;
+            z-index: 5;
+        }
+
+        @keyframes expandFade {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 400px;
+                height: 400px;
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <script>
+        // Enhanced Loading functionality with beautiful animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const loader = document.getElementById('loader');
+            const counterDisplay = document.getElementById('counter-display');
+            const loaderContent = document.querySelector('.loader-content');
+            const typingText = document.getElementById('typing-text');
+            
+            // Create progress bar
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress-bar';
+            const progressFill = document.createElement('div');
+            progressFill.className = 'progress-fill';
+            progressBar.appendChild(progressFill);
+            loader.appendChild(progressBar);
+
+            // Create floating particles
+            createFloatingParticles();
+            
+            let currentNumber = 0;
+            const targetNumber = 100;
+            const totalLoadingTime = 4200; // 4.2 seconds for counting
+            const incrementSpeed = totalLoadingTime / targetNumber;
+            
+            let typingIndex = 0;
+            const welcomeWord = "Welcome";
+            let typingInterval;
+            let typingStarted = false;
+            let typingComplete = false;
+            
+            // Start counter after a short delay
+            setTimeout(() => {
+                const counterInterval = setInterval(() => {
+                    if (currentNumber < targetNumber) {
+                        currentNumber++;
+                        counterDisplay.textContent = currentNumber;
+                        
+                        // Update progress bar
+                        progressFill.style.width = currentNumber + '%';
+                        
+                        // Add number change animation
+                        counterDisplay.style.transform = 'scale(1.1)';
+                        setTimeout(() => {
+                            counterDisplay.style.transform = 'scale(1)';
+                        }, 100);
+                        
+                        // Start typing when counter reaches 25
+                        if (currentNumber === 25 && !typingStarted) {
+                            typingStarted = true;
+                            startTypingAnimation();
+                        }
+                        
+                        // Complete typing when counter reaches 85
+                        if (currentNumber === 85 && !typingComplete) {
+                            completeTypingAnimation();
+                        }
+                        
+                        // Complete loading when counter reaches 100
+                        if (currentNumber === targetNumber) {
+                            finalizeLoader();
+                        }
+                    } else {
+                        clearInterval(counterInterval);
+                        // Create completion animation
+                        createCompletionEffect();
+                        
+                        // Fade out loader and redirect
+                        setTimeout(() => {
+                            loader.style.transition = 'opacity 0.8s ease-out';
+                            loader.style.opacity = '0';
+                            setTimeout(() => {
+                                window.location.href = 'home.html';
+                            }, 800);
+                        }, 500);
+                    }
+                }, incrementSpeed);
+            }, 500);
+            
+            function createFloatingParticles() {
+                const particlesContainer = document.createElement('div');
+                particlesContainer.className = 'particles';
+                loader.appendChild(particlesContainer);
+                
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        const particle = document.createElement('div');
+                        particle.className = 'particle';
+                        particle.style.left = Math.random() * 100 + '%';
+                        particle.style.animationDelay = Math.random() * 6 + 's';
+                        particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                        particlesContainer.appendChild(particle);
+                        
+                        // Remove particle after animation
+                        setTimeout(() => {
+                            if (particle.parentNode) {
+                                particle.remove();
+                            }
+                        }, 8000);
+                    }, i * 200);
+                }
+                
+                // Continue creating particles
+                setInterval(() => {
+                    if (currentNumber < 100) {
+                        const particle = document.createElement('div');
+                        particle.className = 'particle';
+                        particle.style.left = Math.random() * 100 + '%';
+                        particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                        particlesContainer.appendChild(particle);
+                        
+                        setTimeout(() => {
+                            if (particle.parentNode) {
+                                particle.remove();
+                            }
+                        }, 8000);
+                    }
+                }, 800);
+            }
+            
+            function startTypingAnimation() {
+                typingInterval = setInterval(() => {
+                    if (typingIndex < welcomeWord.length) {
+                        typingText.textContent = welcomeWord.substring(0, typingIndex + 1);
+                        typingIndex++;
+                        
+                        // Add typing sound effect (visual)
+                        typingText.style.transform = 'scale(1.05)';
+                        setTimeout(() => {
+                            typingText.style.transform = 'scale(1)';
+                        }, 100);
+                    }
+                }, 80);
+            }
+            
+            function completeTypingAnimation() {
+                clearInterval(typingInterval);
+                typingText.textContent = welcomeWord;
+                typingComplete = true;
+                
+                // Remove blinking cursor
+                const welcomeTextElement = document.querySelector('.welcome-text');
+                welcomeTextElement.classList.add('typing-complete');
+            }
+            
+            function createCompletionEffect() {
+                const completionEffect = document.createElement('div');
+                completionEffect.className = 'completion-effect';
+                loader.appendChild(completionEffect);
+                
+                // Add multiple ripple effects
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        const ripple = document.createElement('div');
+                        ripple.className = 'completion-effect';
+                        ripple.style.animationDelay = i * 0.2 + 's';
+                        loader.appendChild(ripple);
+                        
+                        setTimeout(() => ripple.remove(), 1000);
+                    }, i * 200);
+                }
+                
+                setTimeout(() => completionEffect.remove(), 1000);
+            }
+            
+            function finalizeLoader() {
+                // Enhanced completion effects
+                loaderContent.style.transition = 'all 0.3s ease-out';
+                loaderContent.style.transform = 'scale(1.05)';
+                loaderContent.style.filter = 'brightness(1.2)';
+                
+                setTimeout(() => {
+                    loaderContent.style.transform = 'scale(1)';
+                    loaderContent.style.filter = 'brightness(1)';
+                }, 300);
+                
+                // Add success glow effect
+                counterDisplay.style.color = '#4CAF50';
+                counterDisplay.style.textShadow = '0 0 10px #4CAF50, 0 0 20px #4CAF50';
+            }
+        });
+    </script>
+</body>
+</html>
