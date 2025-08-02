@@ -1,0 +1,487 @@
+/* Sofa Section Styles */
+.sofa-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    min-height: 100vh;
+}
+
+.sofa-section .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sofa-section .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.sofa-section .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+.sofa-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border-radius: 2px;
+}
+
+.sofa-section .section-subtitle {
+    font-size: 1.2rem;
+    color: #bdc3c7;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Sofa Gallery Container */
+.sofa-gallery-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+}
+
+/* Static Sofa Grid Layout - 2 rows, 3 columns */
+.sofa-grid-static {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.sofa-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    background: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    height: 300px; /* Fixed height for uniform appearance */
+}
+
+.sofa-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.sofa-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.sofa-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Sofa Overlay */
+.sofa-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(44, 62, 80, 0.0) 0%,
+        rgba(44, 62, 80, 0.3) 40%,
+        rgba(44, 62, 80, 0.9) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    transform: translateY(20px);
+}
+
+.sofa-item:hover .sofa-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sofa-info {
+    margin-bottom: 20px;
+}
+
+.sofa-info h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sofa-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.sofa-description {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.sofa-item:hover .add-to-cart-btn {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+.add-to-cart-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.add-to-cart-btn:active {
+    transform: scale(0.98);
+}
+
+.add-to-cart-btn i {
+    font-size: 1rem;
+}
+
+/* Navigation Controls */
+.sofa-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.sofa-arrow {
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+}
+
+.sofa-slider:hover .sofa-arrow {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+.sofa-arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.sofa-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Slide Indicators */
+.sofa-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+    z-index: 10;
+    position: relative;
+}
+
+.sofa-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.sofa-dot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.sofa-dot:hover::before,
+.sofa-dot.active::before {
+    left: 0;
+}
+
+.sofa-dot:hover,
+.sofa-dot.active {
+    transform: scale(1.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Loading Animation for Items */
+@keyframes sofaItemLoad {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.sofa-item {
+    animation: sofaItemLoad 0.6s ease-out forwards;
+}
+
+.sofa-item:nth-child(1) { animation-delay: 0.1s; }
+.sofa-item:nth-child(2) { animation-delay: 0.2s; }
+.sofa-item:nth-child(3) { animation-delay: 0.3s; }
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .sofa-gallery-container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .sofa-grid {
+        height: 550px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 968px) {
+    .sofa-section {
+        padding: 60px 0;
+    }
+    
+    .sofa-section .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .sofa-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: auto;
+        gap: 20px;
+    }
+    
+    .sofa-item.large,
+    .sofa-item.small {
+        grid-row: span 1;
+        height: 250px;
+    }
+    
+    .sofa-overlay {
+        padding: 20px;
+    }
+    
+    .sofa-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .add-to-cart-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sofa-section {
+        padding: 40px 0;
+    }
+    
+    .sofa-section .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .sofa-section .section-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .sofa-grid {
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .sofa-item {
+        height: 220px;
+    }
+    
+    .sofa-overlay {
+        padding: 15px;
+    }
+    
+    .sofa-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .sofa-price {
+        font-size: 1.2rem;
+    }
+    
+    .sofa-description {
+        font-size: 0.85rem;
+    }
+    
+    .sofa-arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sofa-section .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .sofa-grid {
+        gap: 10px;
+    }
+    
+    .sofa-item {
+        height: 200px;
+    }
+    
+    .sofa-overlay {
+        padding: 12px;
+    }
+    
+    .sofa-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    
+    .sofa-price {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    
+    .sofa-description {
+        font-size: 0.8rem;
+    }
+    
+    .add-to-cart-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .sofa-arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsive design for sofa grid */
+@media (max-width: 768px) {
+    .sofa-grid-static {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .sofa-item {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sofa-grid-static {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 15px;
+    }
+    
+    .sofa-item {
+        height: 200px;
+    }
+}
