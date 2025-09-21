@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeFurn - Premium Furniture Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/categories.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>LuxeFurn</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Space</h1>
+            <p>Discover our premium collection of handcrafted furniture designed to elevate your living experience</p>
+            <button class="cta-button">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Shop by Categories Section -->
+    <section id="categories" class="shop-by-category">
+        <div class="categories-container">
+            <!-- Left Side: Title and Description -->
+            <div class="categories-header">
+                <h2>Shop by Room</h2>
+                <p>Discover furniture collections tailored for every space in your home</p>
+                <div class="categories-description">
+                    Transform your living spaces with our curated furniture collections. Each room category features handpicked pieces designed to create harmonious and functional environments that reflect your personal style.
+                </div>
+                <ul class="categories-features">
+                    <li>Premium quality materials</li>
+                    <li>Modern & timeless designs</li>
+                    <li>Expert craftsmanship</li>
+                    <li>Sustainable sourcing</li>
+                </ul>
+            </div>
+            
+            <!-- Right Side: Categories Grid -->
+            <div class="categories-grid">
+                <!-- Living Room Category -->
+                <div class="category-card category-living-room" onclick="navigateToLivingRoom()">
+                    <div class="category-image"></div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <div class="category-info">
+                                <h3 class="category-title">Living Room</h3>
+                                <p class="category-subtitle">Comfort meets style in perfect harmony</p>
+                                <span class="category-count">120+ Items</span>
+                            </div>
+                            <div class="category-icon">
+                                <i class="fas fa-couch"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dining Room Category -->
+                <div class="category-card category-dining-room" onclick="navigateToDiningRoom()">
+                    <div class="category-image"></div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <div class="category-info">
+                                <h3 class="category-title">Dining Room</h3>
+                                <p class="category-subtitle">Where memories are made around the table</p>
+                                <span class="category-count">85+ Items</span>
+                            </div>
+                            <div class="category-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bedroom Category -->
+                <div class="category-card category-bedroom" onclick="navigateToBedroom()">
+                    <div class="category-image"></div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <div class="category-info">
+                                <h3 class="category-title">Bedroom</h3>
+                                <p class="category-subtitle">Your personal sanctuary for rest</p>
+                                <span class="category-count">95+ Items</span>
+                            </div>
+                            <div class="category-icon">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office Category -->
+                <div class="category-card category-office" onclick="navigateToOffice()">
+                    <div class="category-image"></div>
+                    <div class="category-content">
+                        <div class="category-header">
+                            <div class="category-info">
+                                <h3 class="category-title">Office</h3>
+                                <p class="category-subtitle">Productivity meets elegant design</p>
+                                <span class="category-count">65+ Items</span>
+                            </div>
+                            <div class="category-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Selection Section -->
+    <section class="category-section">
+        <div class="category-container">
+            <h2 class="category-title" style="color: black; font-size: 4rem;">Shop by Category</h2>
+            <div class="category-circles">
+                <div class="category-circle" data-category="bed" onclick="selectCategory('bed')">
+                    <div class="circle-image">
+                        <img src="images/image copy 4.png" alt="Beds" />
+                    </div>
+                    <div class="circle-overlay">
+                        <span class="category-name">Beds</span>
+                    </div>
+                </div>
+                <div class="category-circle" data-category="chair" onclick="selectCategory('chair')">
+                    <div class="circle-image">
+                        <img src="images/image.png" alt="Chairs" />
+                    </div>
+                    <div class="circle-overlay">
+                        <span class="category-name">Chairs</span>
+                    </div>
+                </div>
+                <div class="category-circle" data-category="table" onclick="selectCategory('table')">
+                    <div class="circle-image">
+                        <img src="images/image copy.png" alt="Tables" />
+                    </div>
+                    <div class="circle-overlay">
+                        <span class="category-name">Tables</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <!-- Bed Carousel -->
+        <div class="carousel-wrapper" id="bed-carousel" style="display: none;">
+            <button class="nav left" onclick="prevSlide('bed')">‹</button>
+            <div class="carousel-container">
+                <div class="carousel-track" data-category="bed">
+                    <div class="card active">
+                        <img src="images/image copy 4.png" alt="King Size Bed" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>King Size Bed</h3>
+                                <p>Luxurious king size bed with premium mattress and elegant headboard design.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">King Size</span>
+                                <span class="feature-tag">Premium</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹1499</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 2.png" alt="Queen Bed" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Queen Platform Bed</h3>
+                                <p>Modern platform bed with built-in storage and minimalist design.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Queen Size</span>
+                                <span class="feature-tag">Storage</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹1299</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 5.png" alt="Bunk Bed" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Bunk Bed</h3>
+                                <p>Space-saving bunk bed with safety rails and ladder access.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Space Saving</span>
+                                <span class="feature-tag">Safe</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹749</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 7.png" alt="Memory Foam Bed" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Memory Foam Bed</h3>
+                                <p>Ultimate comfort with memory foam mattress and adjustable base.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Memory Foam</span>
+                                <span class="feature-tag">Adjustable</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹1899</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 3.png" alt="Minimalist Bed" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Minimalist Platform</h3>
+                                <p>Clean lines and modern design for contemporary bedrooms.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Minimalist</span>
+                                <span class="feature-tag">Contemporary</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹799</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image.png" alt="Canopy Bed" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Luxury Canopy Bed</h3>
+                                <p>Elegant four-poster canopy bed with premium wood construction.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Four Poster</span>
+                                <span class="feature-tag">Luxury</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹2799</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="nav right" onclick="nextSlide('bed')">›</button>
+        </div>
+
+        <!-- Chair Carousel -->
+        <div class="carousel-wrapper" id="chair-carousel" style="display: block;">
+            <button class="nav left" onclick="prevSlide('chair')">‹</button>
+            <div class="carousel-container">
+                <div class="carousel-track" data-category="chair">
+                    <div class="card active">
+                        <img src="images/image.png" alt="Eco Chair" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Eco Chair</h3>
+                                <p>Elegant, lightweight, and sustainable seating for modern homes.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Eco-Friendly</span>
+                                <span class="feature-tag">Lightweight</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹249</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 2.png" alt="Executive Chair" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Executive Office Chair</h3>
+                                <p>Premium leather executive chair with ergonomic support and adjustable height.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Ergonomic</span>
+                                <span class="feature-tag">Leather</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹1299</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 3.png" alt="Dining Chair" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Modern Dining Chair</h3>
+                                <p>Contemporary dining chair with upholstered seat and sleek design.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Upholstered</span>
+                                <span class="feature-tag">Modern</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹399</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 4.png" alt="Lounge Chair" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Comfort Lounge Chair</h3>
+                                <p>Plush lounge chair perfect for reading and relaxation.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Plush</span>
+                                <span class="feature-tag">Relaxation</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹899</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 5.png" alt="Bar Stool" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Modern Bar Stool</h3>
+                                <p>Adjustable bar stool with swivel feature and footrest.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Adjustable</span>
+                                <span class="feature-tag">Swivel</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹599</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 6.png" alt="Gaming Chair" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Gaming Chair Pro</h3>
+                                <p>Professional gaming chair with RGB lighting and ergonomic design.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">RGB Lighting</span>
+                                <span class="feature-tag">Gaming</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹1599</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="nav right" onclick="nextSlide('chair')">›</button>
+        </div>
+
+        <!-- Table Carousel -->
+        <div class="carousel-wrapper" id="table-carousel" style="display: none;">
+            <button class="nav left" onclick="prevSlide('table')">‹</button>
+            <div class="carousel-container">
+                <div class="carousel-track" data-category="table">
+                    <div class="card active">
+                        <img src="images/image copy.png" alt="Dining Table" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Family Dining Table</h3>
+                                <p>Spacious dining table perfect for family gatherings and entertaining.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Family Size</span>
+                                <span class="feature-tag">Oak Wood</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹1899</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 2.png" alt="Coffee Table" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Modern Coffee Table</h3>
+                                <p>Sleek coffee table with glass top and storage compartment.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Glass Top</span>
+                                <span class="feature-tag">Storage</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹799</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 3.png" alt="Office Desk" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Executive Office Desk</h3>
+                                <p>Professional office desk with multiple drawers and cable management.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Executive</span>
+                                <span class="feature-tag">Cable Management</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹2299</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 4.png" alt="Side Table" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Bedside Table</h3>
+                                <p>Compact bedside table with drawer and open shelf storage.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Compact</span>
+                                <span class="feature-tag">Drawer</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹399</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 5.png" alt="Console Table" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>Entryway Console</h3>
+                                <p>Elegant console table perfect for entryways and hallways.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">Entryway</span>
+                                <span class="feature-tag">Elegant</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹999</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/image copy 6.png" alt="Bar Table" />
+                        <div class="info">
+                            <div class="product-details">
+                                <h3>High Bar Table</h3>
+                                <p>Modern bar table perfect for kitchen islands and entertaining.</p>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">High Top</span>
+                                <span class="feature-tag">Modern</span>
+                            </div>
+                            <div class="price-section">
+                                <div class="pricing">
+                                    <div class="price">₹1299</div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="nav right" onclick="nextSlide('table')">›</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About LuxeFurn</h2>
+                <p>For over two decades, LuxeFurn has been crafting premium furniture that transforms houses into homes. Our commitment to quality, sustainability, and timeless design has made us a trusted name in luxury furniture.</p>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-award"></i>
+                        <h3>Premium Quality</h3>
+                        <p>Hand-selected materials and expert craftsmanship</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Sustainable</h3>
+                        <p>Environmentally responsible sourcing and production</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Fast Delivery</h3>
+                        <p>Quick and secure shipping to your doorstep</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>(555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info@luxefurn.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Address</h3>
+                    <p>123 Furniture St, Design City, DC 12345</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LuxeFurn</h4>
+                    <p>Premium furniture for modern living</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@luxefurn.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced hover effects for clickable category cards -->
+    <style>
+        .category-card[onclick] {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .category-card[onclick]:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-card[onclick]:active {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-card[onclick] .category-title {
+            transition: color 0.3s ease;
+        }
+        
+        .category-card[onclick]:hover .category-title {
+            color: #007bff;
+        }
+        
+        .category-card[onclick] .category-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card[onclick]:hover .category-icon {
+            transform: scale(1.1);
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        // Navigation functions
+        function navigateToLivingRoom() {
+            window.location.href = './living room/living_room.html';
+        }
+
+        function navigateToDiningRoom() {
+            window.location.href = './dining hall/index.html';
+        }
+
+        function navigateToOffice() {
+            window.location.href = './office/index.html';
+        }
+
+        function navigateToBedroom() {
+            window.location.href = './bed room/index.html';
+        }
+
+        // Category selection function
+        function selectCategory(category) {
+            // Hide all carousels
+            const carousels = document.querySelectorAll('.carousel-wrapper');
+            carousels.forEach(carousel => {
+                carousel.style.display = 'none';
+            });
+            
+            // Show selected carousel
+            const selectedCarousel = document.getElementById(category + '-carousel');
+            if (selectedCarousel) {
+                selectedCarousel.style.display = 'block';
+            }
+        }
+
+        // Carousel navigation functions
+        function nextSlide(category) {
+            const track = document.querySelector(`[data-category="${category}"]`);
+            const cards = track.querySelectorAll('.card');
+            const activeCard = track.querySelector('.card.active');
+            const currentIndex = Array.from(cards).indexOf(activeCard);
+            const nextIndex = (currentIndex + 1) % cards.length;
+            
+            cards.forEach(card => card.classList.remove('active'));
+            cards[nextIndex].classList.add('active');
+            
+            const cardWidth = cards[0].offsetWidth + 20; // Including margin
+            track.style.transform = `translateX(-${nextIndex * cardWidth}px)`;
+        }
+
+        function prevSlide(category) {
+            const track = document.querySelector(`[data-category="${category}"]`);
+            const cards = track.querySelectorAll('.card');
+            const activeCard = track.querySelector('.card.active');
+            const currentIndex = Array.from(cards).indexOf(activeCard);
+            const prevIndex = currentIndex === 0 ? cards.length - 1 : currentIndex - 1;
+            
+            cards.forEach(card => card.classList.remove('active'));
+            cards[prevIndex].classList.add('active');
+            
+            const cardWidth = cards[0].offsetWidth + 20; // Including margin
+            track.style.transform = `translateX(-${prevIndex * cardWidth}px)`;
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Default to showing chair carousel
+            selectCategory('chair');
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
