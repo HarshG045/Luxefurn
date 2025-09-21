@@ -97,20 +97,35 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .categories-features li::before {
-    content: 'âœ"';
+    content: '◆';
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
     color: white;
-    border-radius: 50%;
+    border-radius: 4px;
     text-align: center;
     line-height: 20px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 600;
+    box-shadow: 0 2px 4px rgba(139, 69, 19, 0.3);
+    transition: all 0.3s ease;
+}
+
+.categories-features li:hover::before {
+    transform: scale(1.1) rotate(45deg);
+    background: linear-gradient(135deg, #D2691E 0%, #8B4513 100%);
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.4);
+}
+
+.categories-features li:hover {
+    color: #8B4513;
+    transform: translateX(5px);
 }
 
 /* Categories Grid - 2x2 Layout */
